@@ -223,7 +223,15 @@ export const CreateScreen = () => {
             alignSelf: 'center',
             marginTop: 20,
           }}>
-          <Button appearance="outline" style={{marginHorizontal: 10}}>
+          <Button
+            appearance="outline"
+            style={{marginHorizontal: 10}}
+            onPress={() => {
+              navigation.reset({
+                index: 0,
+                routes: [{name: 'Home'}],
+              });
+            }}>
             Cancelar
           </Button>
 

@@ -1,17 +1,6 @@
 import React, {createContext, useMemo, useState} from 'react';
 import {EventInterface} from '../interfaces';
-const initialEvents = [
-  {
-    allDay: false,
-    dateEnd: '2024-07-21T00:00:00.000Z',
-    dateStart: '2024-07-21T00:00:00.000Z',
-    id: 1,
-    name: 'prueba 2',
-    timeEnd: '18:14',
-    timeStart: '09:14',
-    type: 'Aniversario',
-  },
-];
+const initialEvents: EventInterface[] = [];
 interface IContextCalendar {
   clearState: () => any;
   types: string[];
@@ -33,7 +22,6 @@ interface ChildrenProps {
 export const CalendarProvider = ({children}: ChildrenProps) => {
   const types = ['Cita', 'Aniversario', 'Cuenta atrás'];
   const [events, setEvents] = useState<EventInterface[]>(initialEvents);
-  // const [events, setEvents] = useState<EventInterface[]>([]);
 
   const clearState = () => {};
   return (
